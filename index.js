@@ -15,7 +15,9 @@ app.get("/api", (req, res) => {
 app.get("/api/:input", (req, res) => {
 	const { input } = req.params
 
-	const date = new Date(input)
+	const isInputTimestamp = !isNaN(Number(input))
+
+	const date = new Date(isInputTimestamp ? Number(input) : input)
 
 	if (isNaN(date.valueOf())) {
 		res.json({
