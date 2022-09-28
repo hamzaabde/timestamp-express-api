@@ -29,6 +29,4 @@ app.get("/api/:input", (req, res) => {
 	})
 })
 
-app.listen(PORT, () => {
-	console.log("server running...")
-})
+app.listen(PORT, () => {})
